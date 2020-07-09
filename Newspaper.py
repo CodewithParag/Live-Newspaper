@@ -10,12 +10,10 @@ r=response.json()
 sun=Dispatch("SAPI.SpVoice")
 print("Hello and welcome to our live news channel, Lets have a look at the headlines first")
 sun.Speak("Hello and welcome to our live news channel, Lets have a look at the headlines first")
-i=0
-while (i<=r['totalResults']):
-
-    pr=r['articles'][i]['title']
-    print(pr)
-    sun.Speak(pr)
-    i=i+1
-print("Thanks for listening,Have a good day")
+art = r['article']
+for i in art:
+       print(i['title'])
+       speak(i['title'])
+        
+print("Thanks for listening, Have a good day")
 sun.Speak("Thanks for listening,Have a good day")
